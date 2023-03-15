@@ -76,7 +76,7 @@ public class ObjectManager : MonoBehaviour
 
         if (o != null)
         {
-            o.transform.SetParent(objectsT);
+           // o.transform.SetParent(objectsT);
             o.loadJSONData(data);
             objects.Add(o);
         }

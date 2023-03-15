@@ -222,7 +222,7 @@ MonoBehaviour:
   light: {fileID: 1189763931}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   dimmer: 0
-  mode: 0
+  mode: 1
   panT: {fileID: 7907981958117790381}
   pan: 0.0055174087
   tilt: 0.00041121527
@@ -235,6 +235,7 @@ MonoBehaviour:
   panMax: 180
   tiltMin: -180
   tiltMax: 180
+  debugPos: {x: 0, y: 0, z: 0}
 --- !u!65 &2223242978285582976
 BoxCollider:
   m_ObjectHideFlags: 0

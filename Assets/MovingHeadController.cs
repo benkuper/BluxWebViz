@@ -36,6 +36,7 @@ public class MovingHeadController : BluxObject
     public float tiltMax;
 
     Vector3 cTarget;
+    public Vector3 debugPos;
 
     //public Renderer beamMat;
 
@@ -148,11 +149,23 @@ public class MovingHeadController : BluxObject
         base.updateFromJSONData(name, data);
         JSONObject val = data["value"];
 
+
         switch (name)
         {
             case "outTarget": target.position = new Vector3(val[0].f, val[1].f, val[2].f); break;
             case "outPan": pan = val.f; break;
             case "outTilt": tilt = val.f; break;
+            case "outDebug": debugPos = new Vector3(val[0].f, val[1].f, val[2].f); break;
+        }
+    }
+
+
+    void OnDrawGizmos()
+    {
+        if(debugPos != Vector3.zero)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(debugPos, .1f);
         }
     }
 }
