@@ -56,6 +56,10 @@ public class BluxObject : MonoBehaviour
                 JSONObject colO = cComp["computedParams"]["outColor"];
                 lightColor = new Color(colO[0].f, colO[1].f, colO[2].f, colO[3].f);
             }
+            else
+            {
+                lightColor = Color.white;
+            }
 
             updateLightColor(); ;
         }

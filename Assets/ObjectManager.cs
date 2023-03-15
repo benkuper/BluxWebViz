@@ -48,7 +48,7 @@ public class ObjectManager : MonoBehaviour
         bool hasOrientation = false;
 
         JSONObject orientationComponent = data["components"]["orientation"];
-        if(orientationComponent != null) hasOrientation = true;
+        if (orientationComponent != null) hasOrientation = true;
 
         string type = data["type"].str;
 
@@ -56,6 +56,7 @@ public class ObjectManager : MonoBehaviour
         switch (type)
         {
             case "Custom":
+            case "Moving Head":
                 bool isMovingHead = hasOrientation;
                 if (isMovingHead)
                 {
@@ -68,15 +69,21 @@ public class ObjectManager : MonoBehaviour
                 }
                 break;
 
+            case "Spot Light":
+            case "RGB Light":
+                o = Instantiate(spotLightPrefab).GetComponent<BluxObject>();
+                break;
+
             default:
-                Debug.Log("Type not handled : " + type);
+                Debug.Log("Type not handled : " + type + ", instantiating default spot light");
+                o = Instantiate(spotLightPrefab).GetComponent<BluxObject>();
                 break;
         }
 
 
         if (o != null)
         {
-           // o.transform.SetParent(objectsT);
+            // o.transform.SetParent(objectsT);
             o.loadJSONData(data);
             objects.Add(o);
         }
