@@ -53,7 +53,8 @@ public class BluxObject : MonoBehaviour
             JSONObject cComp = data["components"]["color"];
             if (cComp != null)
             {
-                JSONObject colO = cComp["computedParams"]["outColor"];
+                //Debug.Log(cComp.ToString(cComp));
+                JSONObject colO = cComp["computedParams"]["outMainColor"];
                 lightColor = new Color(colO[0].f, colO[1].f, colO[2].f, colO[3].f);
             }
             else
@@ -82,7 +83,7 @@ public class BluxObject : MonoBehaviour
         {
             case "stagePosition": transform.position = new Vector3(val[0].f, val[1].f, val[2].f); break;
             case "stageRotation": transform.rotation = Quaternion.Euler(val[0].f, val[1].f, val[2].f); break;
-            case "outColor":
+            case "outMainColor":
                 if (light != null)
                 {
                     lightColor = new Color(val[0].f, val[1].f, val[2].f, val[3].f);

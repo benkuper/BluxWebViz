@@ -11,6 +11,8 @@ public class BluxController : MonoBehaviour
 
     float timeAtLastConnect;
 
+    public int port = 6080;
+
     ObjectManager om;
 
     Dictionary<string, BluxObject> addressObjectMap;
@@ -27,7 +29,7 @@ public class BluxController : MonoBehaviour
 
     void initWS()
     {
-        ws = new WebSocket("ws://127.0.0.1:6060");
+        ws = new WebSocket("ws://127.0.0.1:"+port);
         ws.OnOpen += OnOpen;
         ws.OnClose += OnClose;
         ws.OnError += OnError;

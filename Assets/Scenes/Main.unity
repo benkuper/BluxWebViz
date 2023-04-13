@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLightPrefab: {fileID: 5218357826907154269, guid: 6b534493779ad1b4a88252ae2343c4c0, type: 3}
+  pointLightPrefab: {fileID: 8005553272421315830, guid: d178417b7506d9942a689bdf60147b40, type: 3}
   movingHeadPrefab: {fileID: 2223242978285582979, guid: 0047bb38a33ee4948ac6df9bc485fedc, type: 3}
   lightStripPrefab: {fileID: 0}
   targetPrefab: {fileID: 7196408751217884612, guid: 57fe765a2ca8d0e40a42d9a66b180b31, type: 3}
@@ -642,6 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9428377f791060443b36dff9e154a354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  port: 6080
 --- !u!4 &1616811146
 Transform:
   m_ObjectHideFlags: 0

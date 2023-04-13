@@ -7,6 +7,7 @@ using UnityEngine;
 public class ObjectManager : MonoBehaviour
 {
     public GameObject spotLightPrefab;
+    public GameObject pointLightPrefab;
     public GameObject movingHeadPrefab;
     public GameObject lightStripPrefab;
     public GameObject targetPrefab;
@@ -70,6 +71,9 @@ public class ObjectManager : MonoBehaviour
                 break;
 
             case "Spot Light":
+                o = Instantiate(pointLightPrefab).GetComponent<BluxPointLightObject>();
+                break;
+
             case "RGB Light":
                 o = Instantiate(spotLightPrefab).GetComponent<BluxObject>();
                 break;
